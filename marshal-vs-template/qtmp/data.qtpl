@@ -1,0 +1,20 @@
+{% code
+  type Data struct {
+    ID   int64
+    Name string
+  }
+%}
+
+{% stripspace %}
+{% func Render(data []*Data) %}
+[
+  {% for i, _ := range data %}
+      {
+          "ID": {%d data[i].ID %},
+          "Name":"{%s data[i].Name %}"
+      }
+      {% if i + 1 < len(data) %},{% endif %}
+  {% endfor %}
+]
+{% endfunc %}
+{% endstripspace %}
