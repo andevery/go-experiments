@@ -4,24 +4,23 @@ import (
 	"testing"
 )
 
-// go test --bench=.
+// go test -bench=.
 // PASS
-// BenchmarkTemplateRender1-4            300000        5241 ns/op
-// BenchmarkTemplateRender10-4            30000       39102 ns/op
-// BenchmarkTemplateRender100-4            5000      367930 ns/op
-// BenchmarkTemplateRender1000-4            500     3608926 ns/op
-// BenchmarkMarshalRender1-4            1000000        1143 ns/op
-// BenchmarkMarshalRender10-4            300000        5046 ns/op
-// BenchmarkMarshalRender100-4            30000       44743 ns/op
-// BenchmarkMarshalRender1000-4            3000      442827 ns/op
-// BenchmarkQuickTemplateRender1-4      2000000         677 ns/op
-// BenchmarkQuickTemplateRender10-4      500000        3697 ns/op
-// BenchmarkQuickTemplateRender100-4      50000       34420 ns/op
-// BenchmarkQuickTemplateRender1000-4      5000      335233 ns/op
-// ok    github.com/andevery/go-experiments/marshal-vs-template  20.908s
+// BenchmarkTemplateRender1-4        	  500000	      3209 ns/op
+// BenchmarkTemplateRender10-4       	  100000	     23998 ns/op
+// BenchmarkTemplateRender100-4      	   10000	    230203 ns/op
+// BenchmarkTemplateRender1000-4     	    1000	   2299531 ns/op
+// BenchmarkMarshalRender1-4         	 2000000	       655 ns/op
+// BenchmarkMarshalRender10-4        	  500000	      3009 ns/op
+// BenchmarkMarshalRender100-4       	   50000	     26695 ns/op
+// BenchmarkMarshalRender1000-4      	    5000	    264157 ns/op
+// BenchmarkQuickTemplateRender1-4   	 3000000	       412 ns/op
+// BenchmarkQuickTemplateRender10-4  	 1000000	      2238 ns/op
+// BenchmarkQuickTemplateRender100-4 	  100000	     20367 ns/op
+// BenchmarkQuickTemplateRender1000-4	   10000	    203860 ns/op
+// ok  	github.com/andevery/go-experiments/marshal-vs-template	23.848s
 //
-// sysctl -n machdep.cpu.brand_string
-// Intel(R) Core(TM) i5-4260U CPU @ 1.40GHz
+// Intel(R) Core(TM) i5-4570 CPU @ 3.20GHz × 4
 
 func TestEqualRenderedData(t *testing.T) {
 	a := NewApp(2)
